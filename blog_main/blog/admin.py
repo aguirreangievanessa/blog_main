@@ -1,9 +1,9 @@
 from django.contrib import admin
 from .models import Post, Comment, Category
 
-class CommentItemInline(admin.TabularInline):  # corregido nombre
+class CommentItemInline(admin.TabularInline):  
     model = Comment
-    raw_id_fields = ['post']  # corregido campo
+    raw_id_fields = ['post']  
 
 class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'intro', 'body']
@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['title']
-    list_display = ('title',)  # tupla correcta
+    list_display = ('title',) 
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'post', 'created_at')
